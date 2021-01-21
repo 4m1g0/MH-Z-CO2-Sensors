@@ -8,11 +8,11 @@
 const int MHZ14A = 14;
 const int MHZ19B = 19;
 
-const unsigned long MHZ14A_PREHEATING_TIME = 3 * 60 * 1000;
-const unsigned long MHZ19B_PREHEATING_TIME = 3 * 60 * 1000;
+const unsigned long MHZ14A_PREHEATING_TIME = 0 * 60 * 1000;
+const unsigned long MHZ19B_PREHEATING_TIME = 0 * 60 * 1000;
 
-const unsigned long MHZ14A_RESPONSE_TIME = 60 * 1000;
-const unsigned long MHZ19B_RESPONSE_TIME = 120 * 1000;
+const unsigned long MHZ14A_RESPONSE_TIME = 0 * 1000;
+const unsigned long MHZ19B_RESPONSE_TIME = 0 * 1000;
 
 const int STATUS_NO_RESPONSE = -2;
 const int STATUS_CHECKSUM_MISMATCH = -3;
@@ -20,11 +20,6 @@ const int STATUS_INCOMPLETE = -4;
 const int STATUS_NOT_READY = -5;
 const int STATUS_PWM_NOT_CONFIGURED = -6;
 const int STATUS_SERIAL_NOT_CONFIGURED = -7;
-
-unsigned long lastRequest = 0;
-
-bool SerialConfigured = true;
-bool PwmConfigured = true;
 
 MHZ::MHZ(uint8_t rxpin, uint8_t txpin, uint8_t pwmpin, uint8_t type) {
   SoftwareSerial * ss = new SoftwareSerial(rxpin, txpin);
